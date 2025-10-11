@@ -1,0 +1,13 @@
+<div id="nama"></div>
+<div id="email"></div>
+<div id="telepon"></div>
+
+<script>
+    let params = new URLSearchParams(document.location.search);
+    let nama = params.get("nama");
+    let email = params.get("email");
+    let telepon = params.get("telepon");
+    document.getElementById("nama").innerHTML = nama;
+    document.getElementById("email").innerHTML = email;
+    document.getElementById("telepon").innerHTML = telepon;
+</script>
