@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* Latar belakang modal */
+    .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: center;
+    animation: fadeInBg 0.3s ease forwards;
+    }
+
+    /* Isi modal */
+    .modal-content {
+    background: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+    animation: popUp 0.35s ease forwards;
+    }
+
+    /* Animasi latar belakang */
+    @keyframes fadeInBg {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    }
+
+    /* Animasi muncul modal */
+    @keyframes popUp {
+    0% {
+        transform: scale(0.9) translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    }
+
+    /* Animasi untuk input date muncul */
+    .modal-content input[type="date"] {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInInput 0.5s ease 0.3s forwards;
+    }
+
+    /* Keyframe input date */
+    @keyframes fadeInInput {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    </style>
+</head>
+<body>
+    
+    <!-- Tombol untuk buka modal -->
+    <button id="openModal">Buka Modal</button>
+
+    <!-- Modal -->
+    <div class="modal" id="dateModal">
+        <div class="modal-content">
+            <h3>Pilih Tanggal</h3>
+            <input type="date">
+            <button id="closeModal">Tutup</button>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("dateModal");
+        const openBtn = document.getElementById("openModal");
+        const closeBtn = document.getElementById("closeModal");
+      
+        openBtn.addEventListener("click", () => {
+          modal.style.display = "flex";
+        });
+      
+        closeBtn.addEventListener("click", () => {
+          modal.style.display = "none";
+        });
+      
+        // Klik di luar modal untuk menutup
+        window.addEventListener("click", (e) => {
+          if (e.target === modal) modal.style.display = "none";
+        });
+    </script>
+      
+
+</body>
+</html>
