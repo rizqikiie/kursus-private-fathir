@@ -1,0 +1,17 @@
+/* ini untuk memberikan warna merah untuk tag h1 
+test 1
+test 2
+h1 {
+    color: blue;
+    font-size: 20px;
+} 
+*/
+h1{
+    color: red;
+    font-size: 20px;
+}
+
+h2{
+    color: blue;
+    font-size: 15px;
+}

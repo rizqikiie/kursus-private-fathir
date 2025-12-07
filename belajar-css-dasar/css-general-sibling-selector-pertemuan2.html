@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS General Sibling Selector</title>
+    <style>
+        div ~ p {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <article>
+            <p>ini tidak dipilih</p>
+        </article>
+        <p>ini tidak dipilih</p>
+    </div>
+    <p>ini dipilih</p>
+    <p>ini juga dipilih</p>
+    <p>ini juga dipilih</p>
+    <p>ini juga dipilih</p>
+    <p>ini juga dipilih</p>
+    <p>ini juga dipilih</p>
+    <p>ini juga dipilih</p>
+    <p>ini juga dipilih</p>
+    <p>ini juga dipilih</p>
+</body>
+</html>
